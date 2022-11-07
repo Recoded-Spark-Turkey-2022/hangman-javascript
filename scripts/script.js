@@ -41,3 +41,12 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
   button.addEventListener("click", checkLetter);
 });
+
+const resetGame = (e) => {
+  location.reload(); 
+}
+
+
+let resetButton = document.getElementById("reset");
+resetButton.addEventListener("click",resetGame);
+
