@@ -1,3 +1,5 @@
+const { ContextMenu } = require("primereact");
+
 let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 
 const buttonContainer = document.querySelector(".buttons");
@@ -41,3 +43,4 @@ const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
   button.addEventListener("click", checkLetter);
 });
+
