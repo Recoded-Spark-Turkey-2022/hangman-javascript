@@ -10,7 +10,7 @@ for (let i = 0; i < alphabet.length; i++) {
 }
 
 let word = "";
-let lives = 6;
+let lives = 10;
 
 fetch("https://random-word-api.herokuapp.com/word?number=1")
   .then((response) => response.json())
