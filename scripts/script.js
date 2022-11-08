@@ -64,7 +64,7 @@ clearCanvas = () => {
 Draw = (part) => {
   switch (part) {
     case "gallows":
-      context.strokeStyle = "#444";
+      context.strokeStyle = "#fff";
       context.lineWidth = 10;
       context.beginPath();
       context.moveTo(175, 225);
