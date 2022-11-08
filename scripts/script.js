@@ -10,6 +10,7 @@ for (let i = 0; i < alphabet.length; i++) {
 }
 
 let word = "";
+let lives = 6;
 
 fetch("https://random-word-api.herokuapp.com/word?number=1")
   .then((response) => response.json())
@@ -26,6 +27,18 @@ fetch("https://random-word-api.herokuapp.com/word?number=1")
     }
   });
 
+const hintButton = document.getElementById("hint");
+hintButton.addEventListener("click", () => {
+  const wordContainer = document.querySelector(".word");
+  const letters = wordContainer.querySelectorAll(".letter");
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i].textContent === "_") {
+      letters[i].textContent = word[i];
+      break;
+    }
+  }
+});
+
 const checkLetter = (e) => {
   const letter = e.target.textContent;
   const letters = document.querySelectorAll(".letter");
@@ -37,16 +50,30 @@ const checkLetter = (e) => {
   }
 };
 
+const wrongLetter = (e) => {
+  const letter = e.target.textContent;
+  if (!word.includes(letter)) {
+    lives--;
+    console.log(lives);
+  }
+
+  if (lives === 0) {
+    alert("Game Over");
+  }
+};
+
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach((button) => {
   button.addEventListener("click", checkLetter);
+  button.addEventListener("click", wrongLetter);
 });
 
-const resetGame = (e) => {
-  location.reload(); 
-}
+let livesText = document.getElementById("myLives");
+livesText.innerHTML = `Lives: ${lives}`;
 
+const resetGame = (e) => {
+  location.reload();
+};
 
 let resetButton = document.getElementById("reset");
-resetButton.addEventListener("click",resetGame);
-
+resetButton.addEventListener("click", resetGame);
