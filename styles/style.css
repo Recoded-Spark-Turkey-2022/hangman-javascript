@@ -61,7 +61,7 @@ canvas{
     color:#fff;
     border: #fff dashed 2px;
     padding: 15px;
-}
+  }
 
 h1, h2, h3 {
   font-family: 'Times New Roman', Times, serif;
@@ -173,6 +173,8 @@ button:hover {
   border: solid 1px #fff;
   color: #c1d72e;
 }
+
+
 @media (max-width: 767px) {
   #alphabet {
     padding: 0 0 0 15px;
