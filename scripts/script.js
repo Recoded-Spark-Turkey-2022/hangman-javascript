@@ -173,6 +173,8 @@ buttons.forEach((button) => {
   button.addEventListener("click", wrongLetter);
 });
 
+
+
 const resetGame = (e) => {
   location.reload();
 };
