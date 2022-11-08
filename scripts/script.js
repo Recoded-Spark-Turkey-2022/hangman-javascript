@@ -159,7 +159,11 @@ const wrongLetter = (e) => {
   }
 
   if (lives === 0) {
-    alert("Game Over");
+    vNotify.warning({
+      title: "Game Over",
+      text: "You lost",
+      position: "top-right",
+    });
   }
 };
 
