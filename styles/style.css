@@ -26,15 +26,15 @@ body{
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  
 }
 
 .btn {
@@ -58,9 +58,6 @@ body{
 .wrapper {
   width: 100%;
   margin: 0 auto;
-}
-
-.wrapper{
   content: "";
   display: table;
   clear: both;

@@ -164,6 +164,13 @@ const wrongLetter = (e) => {
       text: "You lost",
       position: "top-right",
     });
+    document.querySelectorAll(".btn").forEach((btn)=>{
+      btn.disabled=true;
+      btn.style.backgroundColor = "gray";
+    })
+    hintButton.disabled = true
+    hintButton.style.backgroundColor = "gray";
+
   }
 };
 
