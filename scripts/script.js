@@ -64,6 +64,7 @@ const wrongLetter = (e) => {
 
   if (lives === 0) {
     alert("Game Over");
+    location.reload()
   }
 };
 
@@ -72,6 +73,8 @@ buttons.forEach((button) => {
   button.addEventListener("click", checkLetter);
   button.addEventListener("click", wrongLetter);
 });
+
+
 
 const resetGame = (e) => {
   location.reload();
