@@ -32,6 +32,7 @@ hintButton.addEventListener("click", () => {
   const wordContainer = document.querySelector(".word");
   const letters = wordContainer.querySelectorAll(".letter");
   for (let i = 0; i < letters.length; i++) {
+    // user can only get two hints
     if (letters[i].textContent === "_") {
       letters[i].textContent = word[i];
       break;
@@ -49,12 +50,16 @@ const checkLetter = (e) => {
     }
   }
 };
+let livesContainer = document.getElementById(".myLives");
+let livesText = document.getElementById("lives");
+livesText.textContent = `${lives}`;
 
 const wrongLetter = (e) => {
   const letter = e.target.textContent;
   if (!word.includes(letter)) {
     lives--;
     console.log(lives);
+    livesText.textContent = `${lives}`;
   }
 
   if (lives === 0) {
@@ -67,9 +72,6 @@ buttons.forEach((button) => {
   button.addEventListener("click", checkLetter);
   button.addEventListener("click", wrongLetter);
 });
-
-let livesText = document.getElementById("myLives");
-livesText.innerHTML = `Lives: ${lives}`;
 
 const resetGame = (e) => {
   location.reload();
