@@ -64,7 +64,7 @@ clearCanvas = () => {
 Draw = (part) => {
   switch (part) {
     case "gallows":
-      context.strokeStyle = "#444";
+      context.strokeStyle = "#fff";
       context.lineWidth = 10;
       context.beginPath();
       context.moveTo(175, 225);
@@ -164,6 +164,13 @@ const wrongLetter = (e) => {
       text: "You lost",
       position: "top-right",
     });
+    document.querySelectorAll(".btn").forEach((btn)=>{
+      btn.disabled=true;
+      btn.style.backgroundColor = "gray";
+    })
+    hintButton.disabled = true
+    hintButton.style.backgroundColor = "gray";
+
   }
 };
 
